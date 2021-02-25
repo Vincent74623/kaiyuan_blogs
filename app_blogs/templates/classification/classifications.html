@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block titles %}<title>寒门客-博客-分类</title>{% endblock %}
+
+{% block heads %}
+    <div class="banner intro-2" id="background" parallax="true" style="background: url(&#x27;{{ url_for('static',filename='images/6.jpg') }}&#x27;) no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="分类">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+
+{% block app_content %}
+  <main>
+
+      <div class="container nopadding-md">
+        <div class="py-5" id="board">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+
+<div class="category-list">
+    <!-- 标签 -->
+
+    {% for fen in fens %}
+    <div class="category row">
+      <a class="category-item collapsed list-group-item category-item-action col-10 col-md-11" id="heading-ckkgbp1uv002htmzt5mknee7a" role="tab" data-toggle="collapse" href="#collapse-ckkgbp1uv002htmzt5mknee7a" aria-expanded="false">
+        {{ fen.name }}
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+        <!--
+      <a href="#" class="category-count col-2 col-md-1">
+        <i class="iconfont icon-articles"></i>
+
+        <span></span>
+
+      </a>
+      -->
+      <div class="category-collapse">
+          {% for fen_id in fen.posts%}
+
+          <!-- 文章 -->
+  <div id="collapse-ckkgbp1uv002htmzt5mknee7a" class="collapse in" role="tabpanel" aria-labelledby="heading-ckkgbp1uv002htmzt5mknee7a">
+
+        <a href="{{ url_for('artcle.artcles',artcles_id=fen_id.id) }}" class="list-group-item list-group-item-action">
+          <span class="category-post">{{ fen_id.body_title }}</span>
+        </a>
+
+  </div>
+      </div>
+    </div>
+    {% endfor %}
+{% endfor %}
+
+
+
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+
+
+
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  </main>
+{% endblock %}

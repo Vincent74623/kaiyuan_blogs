@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block titles %}<title>寒门客-博客</title>{% endblock %}
+{% block heads %}
+    <div class="banner intro-2" id="background" parallax="true" style="background: url(&#x27;{{ url_for('static',filename='images/7.jpg') }}&#x27;) no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="寒门客-博客，开源博客">
+            </span>
+          </div>
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block app_content %}
+<main>
+
+      <div class="container nopadding-md">
+        <div class="py-5" id="board" style="margin-top:0">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+
+    <!-- 这里是循环数据库里面所有文章-->
+     {% for post in posts %}
+                  <div class="row mx-auto index-card">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="{{ url_for('artcle.artcles',artcles_id=post.id) }}" target="_self">
+          <img src="{{ post.body_url }}" srcset="{{ url_for('static',filename='images/loading.gif') }}" alt="{{ post.body_title }}">
+        </a>
+      </div>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="{{ url_for('artcle.artcles',artcles_id=post.id) }}">{{ post.body_title }}</a>
+      </h1>
+      <p class="index-excerpt">
+        <a href="{{ url_for('artcle.artcles',artcles_id=post.id) }}">
+          {{ posts.body | safe | truncate(length=100,killwords=False) }}
+        </a>
+      </p>
+      <div class="index-btm post-metas">
+
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="{{ moment(post.timeramp).format('L') }}" pubdate>
+              {{ moment(post.timeramp).format('L') }}
+            </time>
+          </div>
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+              <a href="{{ url_for('classification.classifications') }}">{{ post.fe.name }}</a>
+                  </div>
+              </div>
+            </article>
+          </div>
+                  {% endfor %}
+  <nav aria-label="navigation">
+      <ul class="nav">
+            <li class="nav-item">
+                <a href="{{ prev_url or '#' }}" class="nav-link{% if not prev_url %} disabled{% endif %}">
+                    <span aria-hidden="true">&larr;</span> 上一页
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=""></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=""></a>
+            </li>
+            <li class="nav-item">
+                        <a href="{{ next_url or '#' }}" class="nav-link{% if not next_url %} disabled{% endif %}">
+                            下一页 <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+          </ul>
+  </nav>
+
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  </main>
+{% endblock %}

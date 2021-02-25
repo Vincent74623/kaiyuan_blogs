@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block titles %}<title>寒门客-博客-删除文章</title>{% endblock %}
+
+{% block heads %}
+    <div class="banner intro-2" id="background" parallax="true" style="background: url(&#x27;{{ url_for('static',filename='images/11.jpg') }}&#x27;) no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="删除文章-页面，请留意!">
+            </span>
+          </div>
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+
+{% block app_content %}
+<main>
+
+      <div class="container nopadding-md">
+        <div class="py-5" id="board" style="margin-top:0">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+    <!-- 这里是循环数据库里面所有文章-->
+     {% for post in posts %}
+                  <div class="row mx-auto index-card">
+    <article class="col-12 col-md-8 mx-auto index-info">
+
+      <h1 class="index-header">
+        <a href="{{ url_for('artcle.artcles',artcles_id=post.id) }}">{{ post.body_title }}</a>
+
+      </h1>
+        <a href="{{ url_for('artcle.delete_artcles',post_id=post.id) }}">删除文章</a>
+            </article>
+          </div>
+                  {% endfor %}
+
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+  </main>
+
+{% endblock %}

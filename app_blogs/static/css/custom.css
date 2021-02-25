@@ -1,0 +1,176 @@
+@import url("//at.alicdn.com/t/font_1948320_spaz57jfo2m.css");
+
+/*哔哩哔哩视频适配*/
+.bilibili {
+	position: relative;
+	width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+	.bilibili {
+		height: 15em;
+		max-width: 25em;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.bilibili {
+		height: 20em;
+		max-width: 30em;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.bilibili {
+		height: 30em;
+		max-width: 40em;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.bilibili {
+		height: 40em;
+		max-width: 50em;
+	}
+}
+
+/* 自定义暗色模式内容 */
+[data-user-color-scheme='dark'] .table {
+	border-color: #FFFFFF;
+	color: #dddddd;
+}
+
+[data-user-color-scheme='dark'] .card {
+	background-color: #262d38;
+}
+
+[data-user-color-scheme='dark'] .waifu-tips-active {
+	color: #dddddd;
+}
+
+/* @media (prefers-color-scheme: dark) {
+	.custom.table{
+		border-color: #FFFFFF;
+		color: #FFFFFF;
+	}
+} */
+
+/* @media (prefers-color-scheme: no-preference) {
+	.table.text-nowrap.text-center{
+		border-color: #000000;
+		color: #000000;
+		background-color: #000000;
+	}
+}
+ */
+
+/* 置顶标签 */
+.index-pin.iconfont.iconzhiding11 {
+	color: #db400b;
+}
+
+/**打赏**/
+.center {
+	text-align: center;
+}
+
+.center>div,
+.center>table
+
+/* insert any other block-level elements here */
+	{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sy_shang {
+	clear: both;
+	overflow: hidden;
+}
+
+[data-user-color-scheme='dark'] .shang_box {
+	background-color: #e5e5e5;
+}
+
+[data-user-color-scheme='dark'] .donate {
+	color: #262d38;
+}
+
+[data-user-color-scheme='dark'] .sl_shang {
+	color: #262d38;
+}
+
+.shang_box {
+	width: 380px;
+	max-width: 98%;
+	height: 360px;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 26px;
+	position: inherit;
+	z-index: 1000;
+	border: 6px dotted #dedede;
+	display: none;
+}
+
+.dashang {
+	display: block;
+	width: 100px;
+	margin: 5px auto;
+	height: 44px;
+	line-height: 25px;
+	padding: 10px;
+	background-color: #E74851;
+	color: #fff !important;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 24px;
+	transition: all 0.3s;
+}
+
+.dashang:hover {
+	opacity: 1.2;
+	font-size: 26px;
+}
+
+#sl_shang0,
+#sl_shang1,
+#sl_shang2 {
+	text-align: center;
+}
+
+#sl_shang0 img,
+#sl_shang1 img,
+#sl_shang2 img {
+	max-width: 260px;
+}
+
+.sl_shang {
+	overflow: hidden;
+}
+
+.sl_shang b {
+	font-size: 18px;
+}
+
+.sl_shang ul {
+	margin-top: 10px;
+	clear: both;
+	overflow: hidden;
+}
+
+.sl_shang li {
+	float: left;
+}
+
+/* Twikoo样式自定义 */
+.tk-content pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f6f8fa;
+	border-radius: 3px;
+}

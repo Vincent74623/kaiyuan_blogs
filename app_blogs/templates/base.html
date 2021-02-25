@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme="&#34;auto&#34;">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static',filename='images/favicon.ico') }}">
+  <link rel="icon" type="image/ico" href="{{ url_for('static',filename='images/favicon.ico') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content>
+  <meta name="author" content="Mintimate">
+  <meta name="keywords" content>
+    {% block titles %}{% endblock %}
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1948320_sfsaqirycsl.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"www.hanmen.xin","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":false},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"trBMrKFdUu2TqszN2WeOAP30-MdYXbMMI","app_key":"44M161fs8XKsjMYywakLg1OP","server_url":null}}};
+  </script>
+  <script src="js/utils.js"></script>
+  <script src="js/color-schema.js"></script>
+<meta name="generator" content="Hexo 5.2.0">
+    {% block scr %}
+    {{ moment.include_moment() }}
+    {% endblock %}
+{% block scripts %}{% endblock %}
+</head>
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">&nbsp;<strong>寒门客-博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ 'index' }}">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ 'classifications' }}">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about.abouts') }}">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="iconfont icon-user-fill"></i>
+                开源项目
+              </a>
+            </li>
+
+            {% if current_user.is_anonymous%}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('sign_in.sign_ins') }}">
+                <i class="iconfont icon-user-fill"></i>
+                登录
+              </a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('artcle.xie_artcles') }}">
+                <i class="iconfont icon-user-fill"></i>
+                文章编辑器
+              </a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('artcle.xianshi') }}">
+                <i class="iconfont icon-user-fill"></i>
+                删除文章
+              </a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ 'cancellations' }}">
+                <i class="iconfont icon-user-fill"></i>
+                退出
+              </a>
+            </li>
+            {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      {% block heads %}{% endblock %}
+  </header>
+
+  {% block app_content %}{% endblock %}
+
+  <footer class="text-center mt-5 py-3">
+	<div class="text-center">
+	  <span id="timeDate" style="font-size:smaller">载入天数...</span>
+	  <span id="times" style="font-size:smaller">载入时分秒...</span>
+	  <script>
+	  var now = new Date();
+	  function createtime(){
+	      var grt= new Date("02/21/2021 00:00:00");//此处修改你的建站时间或者网站上线时间
+	      now.setTime(now.getTime()+250);
+	      days = (now - grt ) / 1000 / 60 / 60 / 24;
+	      dnum = Math.floor(days);
+	      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+	      hnum = Math.floor(hours);
+	      if(String(hnum).length ==1 ){
+	          hnum = "0" + hnum;
+	      }
+	      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+	      mnum = Math.floor(minutes);
+	      if(String(mnum).length ==1 ){
+	                mnum = "0" + mnum;
+	      }
+	      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+	      snum = Math.round(seconds);
+	      if(String(snum).length ==1 ){
+	                snum = "0" + snum;
+	      }
+	      document.getElementById("timeDate").innerHTML = "本站已运行&nbsp"+dnum+"&nbsp天";
+	      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp";
+	  }
+	  setInterval("createtime()",250);
+	  </script>
+	</div>
+  <div class="text-center">
+
+
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a class="ml-3" href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">粤ICP备000000000000000号</a>
+
+
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=00000000" rel="nofollow noopener" class="beian-police" target="_blank">
+
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="{{ url_for('static',filename='images/police_icon.png') }}" srcset="images/loading.gif" alt="police-icon">
+
+          <span>粤公网安备00000000000000号</span>
+        </a>
+
+  </div>
+  </div>
+      <div class="mt-2" style="font-size:smaller">
+      <span class="mb-2">嗷,真的到底了呢~~想联系站长？<a href="{{ 'guangyus' }}">Here</a></span>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css">
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+<script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static',filename='js/debouncer.js') }}"></script>
+<script src="{{ url_for('static',filename='js/events.js') }}"></script>
+<script src="{{ url_for('static',filename='js/plugins.js') }}"></script>
+
+<!-- Plugins -->
+
+    <script src="{{ url_for('static',filename='js/lazyload.js') }}"></script>
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+
+  <script defer src="{{ url_for('static',filename='js/leancloud.js') }}"></script>
+
+  <script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+
+      typing(title)
+
+    })(window, document);
+  </script>
+
+  <script src="{{ url_for('static',filename='js/local-search.js') }}"></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+<!-- 主题的启动项 保持在最底部 -->
+<script src="{{ url_for('static',filename='js/boot.js') }}"></script>
+
+</body>
+</html>

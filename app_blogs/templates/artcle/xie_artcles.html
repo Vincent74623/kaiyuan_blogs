@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>写文章-寒门客-博客</title>
+    <script src="{{ url_for('static', filename='tinymce/js/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='jss/tinymce_setup.js') }}"></script>
+    <link rel="icon" sizes="76x76" href="{{ url_for('static',filename='images/favicon.ico') }}">
+</head>
+<body style="background-color:#F0FFFF">
+    <p><a href="{{ 'index' }}">返回</a></p>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <h3>{{ form.body_title.label }}</h3>
+        <p>{{ form.body_title(size=60) }}</p>
+
+        <h3>{{ form.body_fenlei.label }}</h3>
+        <p>{{ form.body_fenlei(size=50) }}</p>
+
+        <h3>{{ form.body_url.label }}</h3>
+        <p>{{ form.body_url(size=100) }}</p>
+
+        <h3>{{ form.body.label }}</h3>
+        <p>{{ form.body }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

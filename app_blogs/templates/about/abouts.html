@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+
+{% block titles %}<title>寒门客-博客-关于</title>{% endblock %}
+
+{% block heads %}
+    <div class="banner intro-2" id="background" parallax="true" style="background: url({{ url_for('static',filename='images/3.jpg') }}) no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="关于">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+
+
+{% block app_content %}
+<main>
+
+      <div class="container nopadding-md">
+        <div class="py-5" id="board">
+
+            <div class="about-avatar">
+              <img src="{{ url_for('static',filename='images/avatar.png') }}" srcset="{{ url_for('static',filename='images/loading.gif') }}" class="img-fluid" alt="avatar">
+            </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+
+
+<div class="text-center">
+    <div class="about-info">
+        <div class="about-name">黄海登</div>
+        <div class="about-icons">
+
+            <a target="_blank" rel="noopener" href="https://github.com/huanghaideng" class="
+           hint--bottom hint--rounded" aria-label="Github">
+            <i class="iconfont icongit" aria-hidden="true"></i>
+
+            </a>
+
+            <a href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=2168968474&amp;website=www.oicqzone.com" class="
+           hint--bottom hint--rounded" aria-label="QQ">
+            <i class="iconfont iconQQ" aria-hidden="true"></i>
+
+            </a>
+
+            <a target="_blank" rel="noopener" href="https://space.bilibili.com/485604261" class="
+           hint--bottom hint--rounded" aria-label="B站">
+            <i class="iconfont iconbilibili1" aria-hidden="true"></i>
+
+            </a>
+
+            <a href="mailto:2168968474@qq.com" class="
+           hint--bottom hint--rounded" aria-label="Email">
+            <i class="iconfont iconemail__easyic" aria-hidden="true"></i>
+
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<article class="mt-5 markdown-body">
+    <h1 id="寒门客-博客,简介"><a href="#寒门客-博客，简介" class="headerlink" title="hanmen-博客，简介"></a>作者-简介</h1><hr>
+<ul>
+    <li>作者：黄海登</li>
+    <li>性别：男</li>
+    <li>技能:c/c++,python,html,javascript,css</li>
+    <br>
+    <li>本博客是开源博客，没有开源就没有自由的人生</li><br>
+    <li>本站是使用python的web框架Flask开发的，前端代码是使用别人的代码二次修改的，后端是使用python Flask</li>
+    <li>本站不会接任何广告，我也不会使用任何方式运营本站盈利。</li><br>
+    <li>冰心：成功的花，人们只惊羡她现时的明艳！然而当初她的芽儿，浸透了奋斗的泪泉，洒遍了牺牲的血雨。</li>
+    <li>__画船听雨：你看得到我打在屏幕上的字，看不到我落在键盘上的泪。</li>
+    <li>Kali Linux：The quieter you become, the more you are able to hear. </li>
+</ul>
+
+<h1 id="协助端口"><a href="#协助端口" class="headerlink" title="协助端口"></a>协助端口</h1><div class="alert alert-success alert-dismissible fade show" role="alert">
+  一直有小伙伴问博主是<i class="iconfont iconnan"></i>还是<i class="iconfont iconnv"></i>，其实是<i class="iconfont iconV"></i>。哈哈，大家再猜猜吧～保密。<br>
+            如果你需要远程协助，可以扫一扫嗷[○･｀Д´･ ○]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+</div>
+
+<div class="row">
+        <div class="card col-md-6 col-lg-3">
+            <img class="card-img-top" src="{{ url_for('static',filename='images/qq.jpg') }}" srcset="{{ url_for('static',filename='images/loading.gif') }}" alt="QQ">
+            <div class="card-body">
+                <p class="card-text">qq我经常获取的通信平台。<strong>QQ：2168968474</strong></p>
+            </div>
+        </div>
+        <div class="card col-md-6 col-lg-3">
+            <img class="card-img-top" src="{{ url_for('static',filename='images/bilibili.jpg') }}" srcset="{{ url_for('static',filename='images/loading.gif') }}" alt="bilibili">
+            <div class="card-body">
+                <p class="card-text">视频教程优先级.<br><a target="_blank" href="https://space.bilibili.com/355567627">寒门客的Bilibili</a></p>
+            </div>
+        </div>
+        <div class="card col-md-6 col-lg-3">
+            <img class="card-img-top" src="{{ url_for('static',filename='images/zhihu.jpg') }}" srcset="{{ url_for('static',filename='images/loading.gif') }}" alt="aifadian">
+            <div class="card-body">
+                <p class="card-text">有什么问题，大家可以上知乎向我提问。</p>
+            </div>
+        </div>
+        <div class="card col-md-6 col-lg-3">
+            <img class="card-img-top" src="{{ url_for('static',filename='images/gongzhong_wx.jpg') }}" srcset="{{ url_for('static',filename='images/loading.gif') }}" alt="officialAccounts">
+            <div class="card-body">
+                <p class="card-text">微信公众号，偶尔分享一些“新鲜”教程嗷。对博客内容技术教程有疑问，可以加微信号：<strong>ZZ2000728</strong></p>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+<div class="sy_shang center">
+    <a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下"><i class="iconfont icon-yueliang" id="nightMode">打赏</i></a>
+    <div class="shang_box" style="text-align: center"><a href="javascript:void(0)" onclick="dashangToggle()" title="关闭" style="float:right;">X</a>
+        <div id="sl_shang" onsubmit="return postcheck()">
+            <div class="sl_shang"><b>赞赏方式</b>
+                <div class="row donate">
+                    <div class="col-6"><a type="radio" name="paytype" onclick="opay();return changeItem(0);" checked="checked">微信</a></div>
+                    <div class="col-6"><a type="radio" name="paytype" onclick="opay();return changeItem(1);">QQ</a></div>
+                </div>
+            </div>
+            <div id="sl_shang0"><img src="{{ url_for('static',filename='images/wechat_sm.jpg') }}" srcset="images/loading.gif"><br>使用微信扫一扫
+            </div>
+            <div id="sl_shang1" style="display:none;"><img src="{{ url_for('static',filename='images/qq_sm.jpg') }}" srcset="images/loading.gif"><br>打开QQ扫一扫
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+    }
+
+    function changeItem(i) {
+        var k = 2;
+        for (var j = 0; j < k; j++) {
+            if (j == i) {
+                document.getElementById("sl_shang" + j).style.display = "block";
+            } else {
+                document.getElementById("sl_shang" + j).style.display = "none";
+            }
+        }
+    }
+
+    function opay() {
+        document.getElementById("sl_shang").target = "_parent";
+    }
+</script>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  </main>
+{% endblock %}

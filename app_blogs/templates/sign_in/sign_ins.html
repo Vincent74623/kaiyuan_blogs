@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+	<!--[if IE 8]>
+		<html xmlns="http://www.w3.org/1999/xhtml" class="ie8" lang="zh-CN">
+	<![endif]-->
+	<!--[if !(IE 8) ]><!-->
+		<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+	<!--<![endif]-->
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>寒门客-博客-登录</title>
+		<link rel="icon" sizes="76x76" href="{{ url_for('static',filename='images/favicon.ico') }}">
+	<link rel="stylesheet" id="dashicons-css" href="{{ url_for('static',filename='login_jc/css/dashicons.min.css') }}" type="text/css" media="all">
+<link rel="stylesheet" id="buttons-css" href="{{ url_for('static',filename='login_jc/css/buttons.min.css') }}" type="text/css" media="all">
+<link rel="stylesheet" id="forms-css" href="{{ url_for('static',filename='login_jc/css/forms.min.css') }}" type="text/css" media="all">
+<link rel="stylesheet" id="l10n-css" href="{{ url_for('static',filename='login_jc/css/l10n.min.css') }}" type="text/css" media="all">
+<link rel="stylesheet" id="login-css" href="{{ url_for('static',filename='login_jc/css/login.min.css') }}" type="text/css" media="all">
+		<!-- {{ url_for('static',filename='login_jc/') }}-->
+<style type="text/css">
+body.login {
+	background: url({{ url_for('static',filename='images/7.jpg') }}) no-repeat;
+	background-position: center center;
+	background-size: cover;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+body.login #login {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.9);
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+#login #login_error {
+	position: absolute;
+	top: 120px;
+	left: 10px;
+}
+
+.login-action-login form {
+	margin-top: 50px;
+}
+
+.login-action-register form {
+	margin-top: 40px;
+}
+
+@media only screen and (min-width:520px) {
+	body.login #login {
+		width: 85%;
+		margin: 0;
+		max-width: 520px;
+		padding: 40px 0 0;
+		border-left: 1px solid #ddd;
+	}
+}
+
+.login h1 a {
+	background: url({{ url_for('static',filename='images/login_logo.png') }}) no-repeat center;
+	font-size: 50px;
+	text-align: center;
+	width: 220px;
+	height: 50px;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+.login h1 a:focus, #loginform .button-primary:focus {
+	box-shadow: none !important;
+}
+
+.login form {
+	background: transparent !important;
+	box-shadow: none !important;
+	border: none;
+}
+
+.login #login_error, .login .message, .login .success {
+	border-left: none;
+	background: transparent;
+	color: #72777c;
+	box-shadow: none;
+	width: 85%;
+	margin: 1px auto;
+}
+
+#login &gt; p {
+	text-align: center;
+	color: #72777c;
+}
+
+.login label {
+	color: #72777c;
+	font-weight: bold;
+}
+
+.wp-core-ui .button-primary {
+	background: #3690cf;
+	border: none;
+	box-shadow: none;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: none;
+}
+
+.wp-core-ui .button.button-large {
+	padding: 6px 14px;
+	line-height: normal;
+	font-size: 14px;
+	height: auto;
+	margin-bottom: 4px;
+}
+
+input[type=&quot;checkbox&quot;], input[type=&quot;radio&quot;] {
+	width: 16px;
+	height: 16px;
+}
+
+.login form .input, .login input[type=text] {
+	font-size: 16px;
+	line-height: 30px;
+}
+
+input[type=&quot;checkbox&quot;]:checked:before {
+	font: normal 21px/1 dashicons;
+	margin: -2px -4px;
+}
+
+#login form .input {
+	box-shadow: none;
+	border: 1px solid #d1d1d1;
+	border-radius: 3px;
+}
+
+#login form .input {
+	background: #fff;
+}
+
+.to-code a {
+	background: #3690cf;
+	color: #fff;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	display: block;
+
+	border-radius: 2px;
+	text-decoration: none;
+}
+
+.to-code a:hover {
+	opacity:0.8;
+}
+</style>	<meta name="robots" content="noindex,noarchive">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+		<meta name="viewport" content="width=device-width">
+		</head>
+	<body class="login login-action-login wp-core-ui  locale-zh-cn">
+		<div id="login">
+		<h1><a href="{{ 'index' }}" title="" tabindex="-1">寒门客-博客</a></h1>
+
+<form name="loginform" id="loginform" action="" method="post">
+	{{ form.hidden_tag() }}
+	<p>{{ form.username.label }}<br>
+	{{ form.username(size=32) }}
+	</p>
+	<p>{{ form.password.label }}<br>
+	{{ form.password(size=64) }}
+	</p>
+	<p>{{ form.submit() }}</p>
+</form>
+
+<script type="text/javascript">
+function wp_attempt_focus(){
+setTimeout( function(){ try{
+d = document.getElementById('user_login');
+d.focus();
+d.select();
+} catch(e){}
+}, 200);
+}
+
+wp_attempt_focus();
+if(typeof wpOnload=='function')wpOnload();
+</script>
+	<p id="backtoblog"><a href="{{ 'index' }}">&larr; 返回到寒门客-博客</a></p>
+	</div>
+		<div class="clear"></div>
+	</body>
+	</html>
