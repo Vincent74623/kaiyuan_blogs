@@ -62,7 +62,8 @@ flask shell
 from app_blogs import db
 from app_blogs.models import User
 
-u = User(username="你的用户名",password="你的密码")
+u = User(username="你的用户名",email="你的邮箱@qq.com")
+u.set_password('你的密码')
 db.session.add(u)
 db.session.commit()
 quit()
