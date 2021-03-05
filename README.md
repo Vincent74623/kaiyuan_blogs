@@ -130,3 +130,6 @@ flask run -h 0.0.0.0 -p 5000
 局域网访问要你的计算机IP地址，这个你可以百度windows怎么查看ip地址。
 
 代码任意修改，欢迎贡献！
+
+# 微信打赏二维码
+![](https://gitee.com/huang-hai-deng/kaiyuan_blogs/blob/master/weixin_sm.jpg)
