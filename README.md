@@ -1,5 +1,51 @@
 # kaiyuan_blogs
 
+# 目录结构
+```
+blogs/
+	app_blogs/
+		home_page/     首页蓝图
+			__init__.py
+			home_pages.py
+		classification/	分类蓝图
+			__init__.py
+			classifications.py
+		about/		关于蓝图
+			__init__.py
+			abouts.py
+		sign_in/		登录蓝图
+			__init.py
+			sign_ins.py
+		cancellation/	注销蓝图
+			__init.py
+			cancellations.py
+		artcle/		文章蓝图
+			__init.py
+			artcles.py	       ---->这里有三个试图函数，文章正文，写文章，删除文章
+		static/		静态文件
+			js/	js文件
+			css/	css文件
+			images/	图片文件
+		templates/	模板文件
+			home_page/	首页模板
+				home_pages.html
+			classification/	分类模板
+				classifications.html
+			about/		关于模板
+				abouts.html
+			sign_in/		登录模板
+				sign_ins.html
+			artcle/		文章模板
+				artcles.html	文章正文
+				xie_artcles.html	写文章
+				delete_artcles.html		删除文章
+		base.html
+		__init.py		工厂函数
+		models.py	数据库模型文件
+.env
+config.py		配置文件
+wsgi.py		主程序
+```
 
 # 如何安装库和启动?
 解压文件后，请进入文件，这里我使用的是命令行：
