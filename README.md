@@ -132,4 +132,4 @@ flask run -h 0.0.0.0 -p 5000
 代码任意修改，欢迎贡献！
 
 # 微信打赏二维码
-![](https://gitee.com/huang-hai-deng/kaiyuan_blogs/blob/master/weixin_sm.jpg)
+![weixin_sm](https://gitee.com/huang-hai-deng/images/raw/master/weixin_sm.jpg)
